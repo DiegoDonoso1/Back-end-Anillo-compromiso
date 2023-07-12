@@ -10,5 +10,5 @@ public interface AnillosService {
 
     AnillosEntity guardarAnillo(AnillosEntity anillo);
 
-
+    AnillosEntity obtenerAnilloId(Long id);
 }

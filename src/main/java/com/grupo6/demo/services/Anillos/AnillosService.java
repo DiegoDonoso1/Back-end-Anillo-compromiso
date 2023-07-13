@@ -8,7 +8,13 @@ public interface AnillosService {
 
     List<AnillosEntity> traerAnillo();
 
+    AnillosEntity traerAnilloPorId(Long id);
+
+
     AnillosEntity guardarAnillo(AnillosEntity anillo);
 
+    AnillosEntity editarAnillo(Long id, AnillosEntity anillosEntity);
+
     AnillosEntity obtenerAnilloId(Long id);
+
 }

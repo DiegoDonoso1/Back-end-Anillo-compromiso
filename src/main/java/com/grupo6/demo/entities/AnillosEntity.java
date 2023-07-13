@@ -27,12 +27,18 @@ public class AnillosEntity {
     private String imagen;
     private Integer Precio;
 
-    @JsonBackReference
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "categoria_id")
     private CategoriaEntity categoriaAnillo;
+
+
+    //@JsonManagedReference
+    //@OneToMany(mappedBy = "anillosVenta", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    //private List<AnillosEntity> ventaAnillos;
 
     @JsonManagedReference
     @OneToMany(mappedBy = "anilloTalla")
     private List<TallaEntity> talla;
+
 }

@@ -23,7 +23,7 @@ public class CategoriaEntity {
     private String nombreCategoria;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "categoriaAnillo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "categoriaAnillo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<AnillosEntity> anillosCategoria;
 
 }

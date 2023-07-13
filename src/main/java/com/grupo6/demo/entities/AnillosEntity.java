@@ -1,11 +1,14 @@
 package com.grupo6.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Table(name = "anillos")
@@ -24,8 +27,12 @@ public class AnillosEntity {
     private String imagen;
     private Integer Precio;
 
-    @JsonBackReference
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "categoria_id")
     private CategoriaEntity categoriaAnillo;
+
+    //@JsonManagedReference
+    //@OneToMany(mappedBy = "anillosVenta", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    //private List<AnillosEntity> ventaAnillos;
 }

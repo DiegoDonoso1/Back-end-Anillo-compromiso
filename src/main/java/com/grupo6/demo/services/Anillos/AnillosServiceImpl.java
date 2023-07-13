@@ -35,6 +35,7 @@ public class AnillosServiceImpl implements AnillosService {
     }
 
     @Override
+
     public AnillosEntity editarAnillo(Long id  ,AnillosEntity anillosEntity){
         Boolean existe = this.anillosRepository.existsById(id);
         if(existe){
@@ -54,6 +55,10 @@ public class AnillosServiceImpl implements AnillosService {
             return null;
         }
     }
+
+
+    public  AnillosEntity obtenerAnilloId(Long id){
+        return anillosRepository.findById(id).get();}
 
 
 }

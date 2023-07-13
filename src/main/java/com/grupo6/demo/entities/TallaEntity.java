@@ -11,28 +11,31 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "anillos")
+@Table(name = "Tallas")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+public class TallaEntity {
 
-public class AnillosEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nombre;
-    private String descripcion;
-    private String imagen;
-    private Integer Precio;
+    private Long tallaId;
+    private Integer numeroTalla;
+    private Integer stock;
 
     @JsonBackReference
     @ManyToOne
-    @JoinColumn(name = "categoria_id")
-    private CategoriaEntity categoriaAnillo;
+    @JoinColumn(name = "id")
+    private AnillosEntity anilloTalla;
 
-    @JsonManagedReference
-    @OneToMany(mappedBy = "anilloTalla")
-    private List<TallaEntity> talla;
+
+
+
+
+
+
+
+
 }

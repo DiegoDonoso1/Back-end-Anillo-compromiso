@@ -24,6 +24,8 @@ public class AnillosServiceImpl implements AnillosService {
         return anillosRepository.save(anillo);
     }
 
-
+    @Override
+    public  AnillosEntity obtenerAnilloId(Long id){
+        return anillosRepository.findById(id).get();}
 
 }
